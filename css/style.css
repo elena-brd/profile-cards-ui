@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=David+Libre:wght@400;500;700&family=Didact+Gothic&family=Noto+Sans+Hatran&family=Noto+Sans+Khojki&family=Noto+Sans+Lao+Looped:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofia+Sans+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+/* default settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Noto Sans Khojki", sans-serif;
+    color: #272727;
+    background: #fcf6ff;
+    padding: 0 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #272727;
+}
+
+h2 {
+    color: #1d3557;
+}
+
+/* buttons */
+.btn {
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 5px;
+}
+
+.btn-follow,
+.btn-profile {
+    background: #1d3557;
+    color: #fff;
+    padding: 0.2rem 2rem 0.5rem;
+    display: inline-block;
+}
+
+.btn-follow:hover,
+.btn-profile:hover,
+.btn-contact:hover  {
+    background: #7691b7;
+    color: #fff;
+}
+
+.btn-contact {
+    border: 2px solid #7691b7;
+    color: #1d3557;
+    padding: 0.2rem 2rem 0.5rem;
+}
+
+/* user photo profile */
+.card-contact img,
+.card-profile img {
+    width: 120px;
+    border-radius: 50%;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    height: 100vh;
+    margin: 8rem auto;
+}
+
+/* top cards */
+#top-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+
+#top-cards .card-follow,
+#top-cards .card-contact,
+#bottom-card.bottom-card {
+    background: #fff;
+    box-shadow: 0px 10px 15px -7px rgb(184, 181, 188);
+}
+
+/* card with follow btn */
+#top-cards .card-follow,
+#top-cards .card-follow img {
+    width: 450px;
+}
+
+#top-cards .user-info-follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+#top-cards .user-info-follow img {
+    width: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: -65px;
+    border: 8px solid #fff;
+}
+
+#top-cards .info {
+    margin: 3.5rem 0 2rem;
+}
+
+#top-cards .info p,
+#top-cards .contact-info p {
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* card with contact btn */
+#top-cards .card-contact {
+    display: flex;
+    padding: 2rem;
+}
+
+#top-cards .contact-info,
+#bottom-card .profile-info {
+ margin-left: 2rem;
+}
+
+/* card profile (on the bottom)*/
+.bottom-card {
+    width: 700px;
+    margin-left: 10rem;
+    padding: 2rem;
+}
+
+#bottom-card .card-profile {
+    display: flex;
+    align-items: center;
+}
+
+#bottom-card .btn-profile {
+    margin-left: 29rem;
+}
+
+#bottom-card .link {
+    margin-left: 1rem;
+}
+
+
+/* Animation */
+.bottom-card {
+    animation: 2.5s linear 0.5s  bottom-card;
+}
+
+.card-follow {
+    animation: 2.5s linear 0.5s  follow;
+}
+
+.card-contact {
+    animation: 2.5s linear 0.5s  contact;
+}
+
+/* animation for top right card */
+@keyframes contact {
+    from {
+      transform: translateX(110vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+/* animation for top left card */
+@keyframes follow {
+    from {
+      transform: translateX(-110vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+/* animation for buttom card */
+@keyframes bottom-card {
+    from {
+      transform: translateY(110vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+
+@media(max-width: 800px) {
+/* Animation */
+.bottom-card,
+.card-follow,
+.card-contact  {
+    animation: none;
+}  
+
+/* top cards */
+#top-cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0rem auto;
+}
+
+#top-cards .card-contact {
+    width: 450px;
+}
+
+.bottom-card {
+    width: 450px;
+    margin: 2rem;
+    margin: 1rem auto;
+    /* padding: 2rem; */
+}
+
+#bottom-card .btn-profile {
+    margin-left: 0rem;
+    margin-bottom: 1rem;
+}
+
+.container {
+    margin: 5rem auto;
+}
+
+}
+
+
+
